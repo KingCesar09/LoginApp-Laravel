@@ -5,6 +5,8 @@ namespace App\Console;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
+//El Kernel es el que le dice a Laravel qué middlewares tiene que cargar. 
+//Middleware, también conocido como lógica de intercambio de información entre aplicaciones 
 class Kernel extends ConsoleKernel
 {
     /**

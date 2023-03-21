@@ -12,7 +12,8 @@ class respuestas extends Controller
         "result" => array()
     ];
 
-    //<!-- ========== METODO DE RESPUESTA A METODO NO PERMITIDO  ========== -->
+// El método error_405 actualiza la clave status del arreglo $response a "error" y la clave result a otro arreglo asociativo con las claves 
+// "error_id" y "error_msg". El valor de "error_id" es "405" y el de "error_msg" es "Metodo no permitido".
     public function error_405()
     {
         $this->response['status'] = "error";
@@ -23,7 +24,7 @@ class respuestas extends Controller
         return $this->response;
     }
 
-    //<!-- ========== METODO DE RESPUESTA A DATOS INCORRECTOS  ========== -->
+   // El método error_200 hace lo mismo que el método error_405, pero el valor por defecto de "error_id" es "200" y el valor de "error_msg" es el valor del parámetro $valor.
     public function error_200($valor = "Datos incorrectos")
     {
         $this->response['status'] = "error";
@@ -34,7 +35,7 @@ class respuestas extends Controller
         return $this->response;
     }
 
-    //<!-- ========== METODO DE RESPUESTA A DATOS INCOMPLETOS O CON MAL FORMATO  ========== -->
+    //El método error_400 hace lo mismo que el método error_405, pero el valor por defecto de "error_id" es "400" y el valor de "error_msg" es "Datos incompletos o con formato incorrecto".
     public function error_400()
     {
         $this->response['status'] = "error";
@@ -45,7 +46,7 @@ class respuestas extends Controller
         return $this->response;
     }
 
-    //<!-- ========== METODO DE RESPUESTA A ERROR EN SERVIDOR O MAL SENTENCIA SQL  ========== -->
+    //El método error_500 hace lo mismo que el método error_405, pero el valor por defecto de "error_id" es "500" y el valor de "error_msg" es el valor del parámetro $valor.
     public function error_500($valor = "Error interno del servidor")
     {
         $this->response['status'] = "error";
@@ -56,7 +57,7 @@ class respuestas extends Controller
         return $this->response;
     }
 
-    //<!-- ========== METODO DE RESPUESTA A LA NO UTILIZACION DEL TOKEN  ========== -->
+    //El método error_401 hace lo mismo que el método error_405, pero el valor por defecto de "error_id" es "401" y el valor de "error_msg" es el valor del parámetro $valor.
     public function error_401($valor = "No autorizado")
     {
         $this->response['status'] = "error";
